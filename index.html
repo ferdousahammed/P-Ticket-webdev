@@ -51,7 +51,11 @@
         <div class="navbar bg-base-100">
           <div class="navbar-start">
             <div class="dropdown">
-              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <div
+                tabindex="0"
+                role="button"
+                class="btn btn-ghost lg:hidden p-0"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-5 w-5"
@@ -103,8 +107,8 @@
             <a
               class="btn hover:bg-green-200 bg-[#1dd1001a] border-2 border-[#1dd10066]"
             >
-              <div class="flex gap-3 justify-center items-center">
-                <p class="text-xl text-green-main font-bold">Bus</p>
+              <div class="flex lg:gap-3 gap-2 justify-center items-center">
+                <p class="lgtext-xl text-lg text-green-main font-bold">Bus</p>
                 <img src="./images/bus-icon.svg" alt="" />
               </div>
             </a>
@@ -125,8 +129,8 @@
               <p class="text-green-main lg:mt-10">P Paribahan</p>
             </h1>
             <p class="mb-5 font-inter max-w-2xl mx-auto text-white">
-              Yes, you can run unit tests and view the results directly within
-              the app. The integrated testing features allow for a streamlined .
+              Book your ride hassle-free! Explore routes, compare fares, and
+              reserve seats instantly on our user-friendly bus ticket platform.
             </p>
             <a
               href="#buy-ticket"
@@ -141,22 +145,28 @@
         <div
           class="flex mt-10 flex-col lg:flex-row lg:justify-between justify-around items-center gap-6 mx-[8%] lg:relative lg:-top-24"
         >
-          <div class="bg-green-main rounded-3xl">
+          <div class="bg-green-main rounded-3xl max-w-80 w-full">
             <div class="flex gap-4 bg-white rounded-3xl p-8 -translate-y-1">
               <img src="./images/tabler-icon-users-group.svg" alt="" />
               <div>
-                <p class="font-inter text-4xl font-bold text-gray-950">500K+</p>
+                <p
+                  class="font-inter lg:text-4xl text-2xl font-bold text-gray-950"
+                >
+                  500K+
+                </p>
                 <p class="text-lg font-inter text-indigo-950 text-opacity-60">
                   Registered users
                 </p>
               </div>
             </div>
           </div>
-          <div class="bg-green-main rounded-3xl">
+          <div class="bg-green-main rounded-3xl max-w-80 w-full">
             <div class="flex gap-4 bg-white rounded-3xl p-8 -translate-y-1">
               <img src="./images/ticket.svg" alt="" />
               <div>
-                <p class="font-inter text-4xl font-bold text-gray-950">
+                <p
+                  class="font-inter lg:text-4xl text-2xl font-bold text-gray-950"
+                >
                   1.7 lacks
                 </p>
                 <p class="text-lg font-inter text-indigo-950 text-opacity-60">
@@ -165,11 +175,15 @@
               </div>
             </div>
           </div>
-          <div class="bg-green-main rounded-3xl">
+          <div class="bg-green-main rounded-3xl max-w-80 w-full">
             <div class="flex gap-4 bg-white rounded-3xl p-8 -translate-y-1">
               <img src="./images/bus-stop.svg" alt="" />
               <div>
-                <p class="font-inter text-4xl font-bold text-gray-950">80K+</p>
+                <p
+                  class="font-inter lg:text-4xl text-2xl font-bold text-gray-950"
+                >
+                  80K+
+                </p>
                 <p class="text-lg font-inter text-indigo-950 text-opacity-60">
                   Rental partners
                 </p>
@@ -187,9 +201,9 @@
         >
           Best offers for you
         </h1>
-        <div class="flex flex-col gap-4 md:flex-row justify-between">
+        <div class="flex flex-col gap-4 md:flex-row justify-between min-w-52">
           <div
-            class="flex justify-around items-center bg-amber-400 rounded-3xl px-12"
+            class="flex justify-around flex-col lg:flex-row items-center bg-amber-400 rounded-3xl px-12"
           >
             <div class="font-inter space-y-2">
               <h1
@@ -208,9 +222,12 @@
                 use by January 2024
               </p>
             </div>
-            <div class="lg:pl-12 lg:pr-6 h-full">
+            <div class="lg:pl-12 lg:pr-6 h-full hidden lg:inline-block">
               <img class="h-full" src="./images/cupon-devider.png" alt="" />
             </div>
+            <hr
+              class="lg:hidden w-full inline-block border-2 border-dashed border-t-0 border-hrline mt-6 mb-6"
+            />
             <div>
               <h1
                 class="lg:text-3xl text-xl text-gray-950 font-raleway font-bold text-opacity-80"
@@ -218,14 +235,14 @@
                 NEW15
               </h1>
               <p
-                class="lg:text-xl text-base text-gray-950 font-medium text-opacity-50"
+                class="lg:text-xl mb-7 text-base text-gray-950 font-medium text-opacity-50"
               >
                 Coupon Code
               </p>
             </div>
           </div>
           <div
-            class="flex justify-around items-center bg-[#F78C9C] rounded-3xl px-12"
+            class="flex justify-around flex-col lg:flex-row items-center bg-[#F78C9C] rounded-3xl px-12"
           >
             <div class="font-inter space-y-2">
               <h1
@@ -244,9 +261,12 @@
                 use by January 2024
               </p>
             </div>
-            <div class="lg:pl-12 lg:pr-6 h-full">
+            <div class="lg:pl-12 lg:pr-6 h-full hidden lg:inline-block">
               <img class="h-full" src="./images/cupon-devider.png" alt="" />
             </div>
+            <hr
+              class="lg:hidden w-full inline-block border-2 border-dashed border-t-0 border-hrline mt-6 mb-6"
+            />
             <div>
               <h1
                 class="lg:text-3xl text-xl text-gray-950 font-raleway font-bold text-opacity-80"
@@ -254,7 +274,7 @@
                 Couple 20
               </h1>
               <p
-                class="lg:text-xl text-base text-gray-950 font-medium text-opacity-50"
+                class="lg:text-xl text-base mb-7 text-gray-950 font-medium text-opacity-50"
               >
                 Coupon Code
               </p>
@@ -282,8 +302,8 @@
             <p
               class="mb-5 px-4 font-inter max-w-2xl mx-auto text-center text-black"
             >
-              Yes, you can run unit tests and view the results directly within
-              the app. The integrated testing features allow for a streamlined .
+              Easily reserve bus tickets online! Trustworthy, convenient, and
+              secure platform for all your travel reservations.
             </p>
           </div>
 
@@ -419,34 +439,54 @@
               </div>
               <div class="flex justify-between">
                 <div class="font-inter flex flex-col gap-6">
-                  <p class="btn border-0 hover:bg-white bg-white shadow-none">
+                  <p
+                    class="btn border-0 hover:bg-white bg-white shadow-none text-[#03071299]"
+                  >
                     A
                   </p>
-                  <p class="btn border-0 hover:bg-white bg-white shadow-none">
+                  <p
+                    class="btn border-0 hover:bg-white bg-white shadow-none text-[#03071299]"
+                  >
                     B
                   </p>
-                  <p class="btn border-0 hover:bg-white bg-white shadow-none">
+                  <p
+                    class="btn border-0 hover:bg-white bg-white shadow-none text-[#03071299]"
+                  >
                     C
                   </p>
-                  <p class="btn border-0 hover:bg-white bg-white shadow-none">
+                  <p
+                    class="btn border-0 hover:bg-white bg-white shadow-none text-[#03071299]"
+                  >
                     D
                   </p>
-                  <p class="btn border-0 hover:bg-white bg-white shadow-none">
+                  <p
+                    class="btn border-0 hover:bg-white bg-white shadow-none text-[#03071299]"
+                  >
                     E
                   </p>
-                  <p class="btn border-0 hover:bg-white bg-white shadow-none">
+                  <p
+                    class="btn border-0 hover:bg-white bg-white shadow-none text-[#03071299]"
+                  >
                     F
                   </p>
-                  <p class="btn border-0 hover:bg-white bg-white shadow-none">
+                  <p
+                    class="btn border-0 hover:bg-white bg-white shadow-none text-[#03071299]"
+                  >
                     G
                   </p>
-                  <p class="btn border-0 hover:bg-white bg-white shadow-none">
+                  <p
+                    class="btn border-0 hover:bg-white bg-white shadow-none text-[#03071299]"
+                  >
                     H
                   </p>
-                  <p class="btn border-0 hover:bg-white bg-white shadow-none">
+                  <p
+                    class="btn border-0 hover:bg-white bg-white shadow-none text-[#03071299]"
+                  >
                     I
                   </p>
-                  <p class="btn border-0 hover:bg-white bg-white shadow-none">
+                  <p
+                    class="btn border-0 hover:bg-white bg-white shadow-none text-[#03071299]"
+                  >
                     J
                   </p>
                 </div>
@@ -454,102 +494,102 @@
                   <!-- 1 2 -->
                   <div class="grid grid-cols-2 gap-6">
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       A1
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       A2
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       B1
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       B2
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       C1
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       C2
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       D1
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       D2
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       E1
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       E2
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       F1
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       F2
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       G1
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       G2
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       H1
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       H2
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       I1
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       I2
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       J1
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       J2
                     </button>
@@ -557,102 +597,102 @@
                   <!-- 3 4  -->
                   <div class="grid grid-cols-2 gap-6">
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       A3
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       A4
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       B3
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       B4
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       C3
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       C4
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       D3
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       D4
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       E3
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       E4
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       F3
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       F4
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       G3
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       G4
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       H3
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       H4
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       I3
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       I4
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       J3
                     </button>
                     <button
-                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no"
+                      class="btn border-0 lg:px-11 px-4 bg-stone-50 hover:bg-green-main hover:text-white seat-no text-[#03071299]"
                     >
                       J4
                     </button>
@@ -712,6 +752,7 @@
                 </div>
                 <!-- coupon box  -->
                 <div
+                  id="coupon-box"
                   class="bg-white rounded-lg w-full flex justify-between px-3 py-2 items-center"
                 >
                   <input
@@ -721,12 +762,28 @@
                     class="font-inter min-w-10 text-sm pl-4 outline-none"
                   />
                   <button
+                    id="apply-btn"
                     onclick="handleCouponSubmit()"
                     class="btn bg-green-main text-white font-semibold text-base font-inter border-0"
+                    disabled
                   >
                     Apply
                   </button>
                 </div>
+
+                <!-- discount box  -->
+                <div id="discount-box" class="flex justify-between hidden">
+                  <p class="text-gray-950 font-inter font-medium text-base">
+                    Discount
+                  </p>
+                  <p
+                    id="discount"
+                    class="text-gray-950 font-inter text-end font-medium text-base"
+                  >
+                    0
+                  </p>
+                </div>
+
                 <!--Grand total  -->
                 <div class="flex justify-between">
                   <p class="text-gray-950 font-inter font-medium text-base">
@@ -768,14 +825,17 @@
                     Email ID
                   </p>
                   <input
+                    id="passenger-email"
                     type="email"
                     placeholder="Enter your email id"
                     class="font-inter text-sm pl-4 outline-none border-2 border-gray-200 rounded-lg h-14 w-full"
                   />
 
                   <button
+                    id="next-btn"
                     onclick="my_modal_5.showModal(), nextClick()"
                     class="btn text-xl font-raleway font-extrabold w-full h-14 text-white bg-green-main border-0"
+                    disabled
                   >
                     Next
                   </button>
@@ -842,7 +902,7 @@
             P-Ticket
           </h3>
           <p class="max-w-96 text-white font-inter text-lg text-opacity-80">
-            P-Ticket is a digital platform to make your daily commuting better.
+            PTicket: Your Passage, Our Promise.
           </p>
         </div>
         <div class="space-y-4">

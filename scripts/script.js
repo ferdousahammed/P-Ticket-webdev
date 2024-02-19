@@ -5,62 +5,79 @@ function setInnerTextById(id, innerText) {
   document.getElementById(id).innerText = innerText;
 }
 
-// bookedSeatsCount = 0;
-// let totalPrice = 0;
-
+const passengerPhone = document.getElementById("passenger-phone");
 const seats = document.getElementsByClassName("seat-no");
-const seatList = [];
+let seatList = [];
 for (const seat of seats) {
   seat.addEventListener("click", () => {
     const seatNo = seat.innerText;
-    let bookedSeatsCount = Number(getInnerTextById("booked-count"));
+    let bookedSeatsCount = parseInt(getInnerTextById("booked-count"));
+
+    seatList = [];
+    const seatListElement = document.querySelectorAll(".booked");
+    seatListElement.forEach((element) => {
+      seatList.push(element.innerText);
+    });
+
     if (!seatList.includes(seatNo)) {
       if (bookedSeatsCount < 4) {
         bookedSeatsCount += 1;
-        console.log(bookedSeatsCount);
-
-        seatList.push(seatNo);
         seat.classList.remove("bg-stone-50");
         seat.classList.add("bg-green-main", "text-white", "booked");
         appendSeatsList(seatNo);
       } else {
         alert("Sorry! You can book only 4 seats at a time.");
       }
-    }
-    // else {
-    //   seatList.splice(seatList.indexOf(seatNo), 1);
-    //   seat.classList.remove("bg-green-main", "text-white", "booked");
-    //   //   bookedSeatsCount -= 1;
-    // }
 
+      if (bookedSeatsCount === 4) {
+        const applyBtn = document.getElementById("apply-btn");
+        applyBtn.removeAttribute("disabled");
+      }
+      if (bookedSeatsCount && passengerPhone.value > 0) {
+        const nextBtn = document.getElementById("next-btn");
+        nextBtn.removeAttribute("disabled");
+      }
+    }
     setInnerTextById("booked-count", bookedSeatsCount);
     setInnerTextById("seats-left", 40 - bookedSeatsCount);
     const totalPrice = 550 * bookedSeatsCount;
     setInnerTextById("total-price", totalPrice);
+    setInnerTextById("grand-total", totalPrice);
   });
 }
 
+passengerPhone.addEventListener("keyup", () => {
+  let bookedSeatsCount = parseInt(getInnerTextById("booked-count"));
+  if (bookedSeatsCount && passengerPhone.value.length > 0) {
+    const nextBtn = document.getElementById("next-btn");
+    nextBtn.removeAttribute("disabled");
+  }
+});
+
 function handleCouponSubmit() {
   const submittedCode = document.getElementById("coupon-code").value;
+  const applyBtn = document.getElementById("apply-btn");
   const bookedSeats = parseInt(getInnerTextById("booked-count"));
-
+  const couponBoxElement = document.getElementById("coupon-box");
+  const discountBoxElement = document.getElementById("discount-box");
   if (bookedSeats === 4) {
+    let percentValue = 0;
     if (submittedCode === "NEW15") {
-      const grandTotalPrice =
-        parseInt(getInnerTextById("total-price")) -
-        parseInt(getInnerTextById("total-price")) * 0.15;
-      setInnerTextById("grand-total", grandTotalPrice);
-      document.getElementById("coupon-code").value = "";
+      percentValue = 0.15;
     } else if (submittedCode === "Couple 20") {
-      const grandTotalPrice =
-        parseInt(getInnerTextById("total-price")) -
-        parseInt(getInnerTextById("total-price")) * 0.2;
-      setInnerTextById("grand-total", grandTotalPrice);
-      document.getElementById("coupon-code").value = "";
+      percentValue = 0.2;
     } else {
       alert("Enter Valid Coupon");
-      document.getElementById("coupon-code").value = "";
     }
+    const discount = percentValue * parseInt(getInnerTextById("total-price"));
+    const totalPrice = parseInt(getInnerTextById("total-price"));
+    const grandTotalPrice = totalPrice - discount;
+    setInnerTextById("grand-total", grandTotalPrice);
+    setInnerTextById("discount", discount);
+    document.getElementById("coupon-code").value = "";
+    applyBtn.setAttribute("disabled", "");
+    couponBoxElement.classList.add("hidden");
+    discountBoxElement.classList.remove("hidden");
   } else {
     alert("You need to book 4 seats");
   }
@@ -89,23 +106,34 @@ function appendSeatsList(seatNo) {
 }
 
 function nextClick() {
-  const passengerName = document.getElementById("passenger-name").value;
-  const passengerPhone = document.getElementById("passenger-phone").value;
+  const passengerName = document.getElementById("passenger-name");
+  const passengerPhone = document.getElementById("passenger-phone");
+  const passengerEmail = document.getElementById("passenger-email");
+  const nextBtn = document.getElementById("next-btn");
+  const couponBoxElement = document.getElementById("coupon-box");
+  const discountBoxElement = document.getElementById("discount-box");
   if (
-    typeof passengerName === "string" &&
-    passengerName.length > 0 &&
-    passengerPhone.length > 0
+    typeof passengerName.value === "string" &&
+    passengerName.value.length > 0 &&
+    passengerPhone.value.length > 0
   ) {
     const bookedElement = document.querySelectorAll(".booked");
     for (const booked of bookedElement) {
       booked.classList.remove("bg-green-main", "text-white", "booked");
+      booked.classList.add("bg-stone-50");
     }
     const seatListElement = document.getElementById("seat-lists");
     seatListElement.innerHTML = "";
+    passengerEmail.value = "";
+    passengerName.value = "";
+    passengerPhone.value = "";
     setInnerTextById("total-price", 0);
     setInnerTextById("grand-total", 0);
     setInnerTextById("seats-left", 40);
     setInnerTextById("booked-count", 0);
+    nextBtn.setAttribute("disabled", "");
+    couponBoxElement.classList.remove("hidden");
+    discountBoxElement.classList.add("hidden");
   } else {
     alert("Enter valid information");
   }
