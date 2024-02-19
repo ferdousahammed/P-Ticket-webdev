@@ -68,7 +68,7 @@ function handleCouponSubmit() {
       couponBoxElement.classList.add("hidden");
       discountBoxElement.classList.remove("hidden");
     } else {
-      alert("Enter Valid Coupon");
+      alert("Please enter Valid Coupon Code.");
     }
     const discount = percentValue * parseInt(getInnerTextById("total-price"));
     const totalPrice = parseInt(getInnerTextById("total-price"));
@@ -77,7 +77,7 @@ function handleCouponSubmit() {
     setInnerTextById("discount", discount);
     document.getElementById("coupon-code").value = "";
   } else {
-    alert("You need to book 4 seats");
+    alert("You need to book at least 4 seats");
   }
 }
 
@@ -110,32 +110,24 @@ function nextClick() {
   const nextBtn = document.getElementById("next-btn");
   const couponBoxElement = document.getElementById("coupon-box");
   const discountBoxElement = document.getElementById("discount-box");
-  if (
-    typeof passengerName.value === "string" &&
-    passengerName.value.length > 0 &&
-    passengerPhone.value.length > 0
-  ) {
-    const bookedElement = document.querySelectorAll(".booked");
-    for (const booked of bookedElement) {
-      booked.classList.remove("bg-green-main", "text-white", "booked");
-      booked.classList.add("bg-stone-50");
-    }
-    const seatListElement = document.getElementById("seat-lists");
-    seatListElement.innerHTML = "";
-    passengerEmail.value = "";
-    passengerName.value = "";
-    passengerPhone.value = "";
-    setInnerTextById("total-price", 0);
-    setInnerTextById("grand-total", 0);
-    setInnerTextById("seats-left", 40);
-    setInnerTextById("booked-count", 0);
-    nextBtn.setAttribute("disabled", "");
-    couponBoxElement.classList.remove("hidden");
-    discountBoxElement.classList.add("hidden");
-    enableSeats(getBookedSeatList(), seats);
-  } else {
-    alert("Enter valid information");
+  const bookedElement = document.querySelectorAll(".booked");
+  for (const booked of bookedElement) {
+    booked.classList.remove("bg-green-main", "text-white", "booked");
+    booked.classList.add("bg-stone-50");
   }
+  const seatListElement = document.getElementById("seat-lists");
+  seatListElement.innerHTML = "";
+  passengerEmail.value = "";
+  passengerName.value = "";
+  passengerPhone.value = "";
+  setInnerTextById("total-price", 0);
+  setInnerTextById("grand-total", 0);
+  setInnerTextById("seats-left", 40);
+  setInnerTextById("booked-count", 0);
+  nextBtn.setAttribute("disabled", "");
+  couponBoxElement.classList.remove("hidden");
+  discountBoxElement.classList.add("hidden");
+  enableSeats(getBookedSeatList(), seats);
 }
 
 function disableSeats(seatList, seats) {
