@@ -12,13 +12,7 @@ for (const seat of seats) {
   seat.addEventListener("click", () => {
     const seatNo = seat.innerText;
     let bookedSeatsCount = parseInt(getInnerTextById("booked-count"));
-
-    seatList = [];
-    const seatListElement = document.querySelectorAll(".booked");
-    seatListElement.forEach((element) => {
-      seatList.push(element.innerText);
-    });
-
+    seatList = getBookedSeatList();
     if (!seatList.includes(seatNo)) {
       if (bookedSeatsCount < 4) {
         bookedSeatsCount += 1;
@@ -27,6 +21,7 @@ for (const seat of seats) {
         appendSeatsList(seatNo);
       } else {
         alert("Sorry! You can book only 4 seats at a time.");
+        disableSeats(seatList, seats);
       }
 
       if (bookedSeatsCount === 4) {
@@ -64,8 +59,14 @@ function handleCouponSubmit() {
     let percentValue = 0;
     if (submittedCode === "NEW15") {
       percentValue = 0.15;
+      applyBtn.setAttribute("disabled", "");
+      couponBoxElement.classList.add("hidden");
+      discountBoxElement.classList.remove("hidden");
     } else if (submittedCode === "Couple 20") {
       percentValue = 0.2;
+      applyBtn.setAttribute("disabled", "");
+      couponBoxElement.classList.add("hidden");
+      discountBoxElement.classList.remove("hidden");
     } else {
       alert("Enter Valid Coupon");
     }
@@ -75,9 +76,6 @@ function handleCouponSubmit() {
     setInnerTextById("grand-total", grandTotalPrice);
     setInnerTextById("discount", discount);
     document.getElementById("coupon-code").value = "";
-    applyBtn.setAttribute("disabled", "");
-    couponBoxElement.classList.add("hidden");
-    discountBoxElement.classList.remove("hidden");
   } else {
     alert("You need to book 4 seats");
   }
@@ -134,7 +132,33 @@ function nextClick() {
     nextBtn.setAttribute("disabled", "");
     couponBoxElement.classList.remove("hidden");
     discountBoxElement.classList.add("hidden");
+    enableSeats(getBookedSeatList(), seats);
   } else {
     alert("Enter valid information");
   }
+}
+
+function disableSeats(seatList, seats) {
+  for (const seat of seats) {
+    if (!seatList.includes(seat.innerText)) {
+      seat.setAttribute("disabled", "");
+    }
+  }
+}
+
+function enableSeats(seatList, seats) {
+  for (const seat of seats) {
+    if (!seatList.includes(seat.innerText)) {
+      seat.removeAttribute("disabled");
+    }
+  }
+}
+
+function getBookedSeatList() {
+  const seatList = [];
+  const seatListElement = document.querySelectorAll(".booked");
+  seatListElement.forEach((element) => {
+    seatList.push(element.innerText);
+  });
+  return seatList;
 }
